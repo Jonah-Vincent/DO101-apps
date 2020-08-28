@@ -2,7 +2,7 @@ const express = require('express');
 app = express();
 
 
-var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+/*var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
 if (mongoURL == null) {
@@ -40,7 +40,9 @@ if (mongoURL == null) {
     mongoURLLabel += mongoHost + ':' + mongoPort + '/' + mongoDatabase;
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
   }
-}
+} */
+
+var mongoURL = 'mongodb://userCQA:Wdc4Ag7INkDHNy80@mongodb:27017'
 
 var db = null,
     dbDetails = new Object();
