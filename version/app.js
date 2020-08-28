@@ -88,6 +88,9 @@ app.get('/', function (req, res) {
     let test = db.collection.find( {} ) 
       res.send(test); 
   }
+  else {
+    res.send("shit aint working yo");
+  }
 });
 
 var response;
