@@ -42,7 +42,7 @@ if (mongoURL == null) {
   }
 } */
 
-var mongoURL = 'mongodb://user8TM:CAQesYWBYTNTtYd5@mongodb:27017'
+var mongoURL = 'mongodb://user8TM:CAQesYWBYTNTtYd5@mongodb:27017/sampledb'
 
 var db = null,
     dbDetails = new Object();
