@@ -60,7 +60,7 @@ var initDb = function(callback) {
     }
 
     db = conn;
-    dbDetails.databaseName = db.databaseName;
+    dbDetails.databaseName = 'sampledb';
     dbDetails.url = mongoURL;
     dbDetails.type = 'MongoDB';
 
