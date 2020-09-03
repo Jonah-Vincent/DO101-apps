@@ -65,6 +65,7 @@ var initDb = function(callback) {
     dbDetails.type = 'MongoDB';
 
     console.log('Connected to MongoDB at: %s', mongoURL);
+    console.log('heres what db looks like currently',db)
   });
 };
 
