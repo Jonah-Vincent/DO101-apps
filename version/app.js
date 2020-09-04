@@ -59,7 +59,7 @@ var initDb = function(callback) {
       return;
     }
 
-    //db = conn;
+    db = conn;
     //dbDetails.databaseName = 'sampledb';
     //dbDetails.url = mongoURL;
     //dbDetails.type = 'MongoDB';
@@ -89,7 +89,7 @@ app.get('/', function (req, res) {
   } else {
     res.render('index.html', { pageCountMessage : null});
   } */
-    const collection = conn.db().collection('inventory');
+    const collection = db.db().collection('inventory');
     let test = collection.findOne({});
     res.send(test); 
   }
