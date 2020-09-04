@@ -59,14 +59,14 @@ var initDb = function(callback) {
       return;
     }
 
-    db = conn;
+    db = conn.db();
     //dbDetails.databaseName = 'sampledb';
     //dbDetails.url = mongoURL;
     //dbDetails.type = 'MongoDB';
     
 
     console.log('Connected to MongoDB at: %s', mongoURL);
-    console.log('heres what db looks like currently',db.db())
+    console.log('heres what db looks like currently TEST TEST TEST',db)
   });
 };
 
@@ -89,8 +89,8 @@ app.get('/', function (req, res) {
   } else {
     res.render('index.html', { pageCountMessage : null});
   } */
-    const collection = db.db().collection('inventory');
-    let test = collection.findOne({});
+    //const collection = db.db().collection('inventory');
+    //let test = collection.findOne({});
     res.send(test); 
   }
   else {
