@@ -89,8 +89,8 @@ app.get('/', function (req, res) {
   } else {
     res.render('index.html', { pageCountMessage : null});
   } */
-    //const collection = db.db().collection('inventory');
-    //let test = collection.findOne({});
+    const collection = db.collection('inventory');
+    let test = collection.findOne({});
     res.send(test); 
   }
   else {
