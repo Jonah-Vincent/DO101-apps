@@ -91,8 +91,10 @@ app.get('/', function (req, res) {
   } */
     const collection = db.collection('inventory');
     //console.log("here is the result of running find on our inventory collection",collection.find( {} ));
-    let test = collection.find({item: "canvas"});
-    res.send(test); 
+    collection.find({}).toArray(function(error, documents) {
+      if (err) throw error;
+      res.send(documents);
+    });
   }
   else {
     res.send("shit aint working yo");
