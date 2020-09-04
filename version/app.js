@@ -53,7 +53,7 @@ var initDb = function(callback) {
   var mongodb = require('mongodb');
   if (mongodb == null) return;
 
-  const client =  mongodb.connect(mongoURL, function(err, conn) {
+  mongodb.connect(mongoURL, function(err, conn) {
     if (err) {
       callback(err);
       return;
@@ -63,10 +63,10 @@ var initDb = function(callback) {
     //dbDetails.databaseName = 'sampledb';
     //dbDetails.url = mongoURL;
     //dbDetails.type = 'MongoDB';
-    const db = client.db('sampledb');
+    
 
     console.log('Connected to MongoDB at: %s', mongoURL);
-    console.log('heres what db looks like currently',db)
+    console.log('heres what db looks like currently',db.db())
   });
 };
 
