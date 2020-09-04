@@ -92,7 +92,7 @@ app.get('/', function (req, res) {
     const collection = db.collection('inventory');
     //console.log("here is the result of running find on our inventory collection",collection.find( {} ));
     collection.find({}).toArray(function(error, documents) {
-      if (err) throw error;
+      if (error) throw error;
       res.send(documents);
     });
   }
