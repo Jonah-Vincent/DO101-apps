@@ -53,16 +53,17 @@ var initDb = function(callback) {
   var mongodb = require('mongodb');
   if (mongodb == null) return;
 
-  mongodb.connect(mongoURL, function(err, conn) {
+  const client =  mongodb.connect(mongoURL, function(err, conn) {
     if (err) {
       callback(err);
       return;
     }
 
-    db = conn;
-    dbDetails.databaseName = 'sampledb';
-    dbDetails.url = mongoURL;
-    dbDetails.type = 'MongoDB';
+    //db = conn;
+    //dbDetails.databaseName = 'sampledb';
+    //dbDetails.url = mongoURL;
+    //dbDetails.type = 'MongoDB';
+    const db = client.db('sampledb');
 
     console.log('Connected to MongoDB at: %s', mongoURL);
     console.log('heres what db looks like currently',db)
@@ -88,8 +89,10 @@ app.get('/', function (req, res) {
   } else {
     res.render('index.html', { pageCountMessage : null});
   } */
-    let test = db.collection('inventory').find( {} ) 
-      res.send(test); 
+
+    const collection = db.collection('inventory'); 
+    let test = collection.findOne({});
+    res.send(test); 
   }
   else {
     res.send("shit aint working yo");
