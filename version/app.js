@@ -90,7 +90,8 @@ app.get('/', function (req, res) {
     res.render('index.html', { pageCountMessage : null});
   } */
     const collection = db.collection('inventory');
-    let test = collection.findOne({});
+    console.log("here is the result of running find on our inventory collection",collection.find( {} ));
+    let test = collection.find({});
     res.send(test); 
   }
   else {
