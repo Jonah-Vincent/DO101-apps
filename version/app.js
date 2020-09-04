@@ -101,6 +101,10 @@ app.get('/', function (req, res) {
   }
 });
 
+app.get('/test',function (req, res) {
+  res.send("test worked");
+})
+
 var response;
 
 /*app.get('/', function (req, res) {
