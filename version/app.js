@@ -90,7 +90,7 @@ app.get('/', function (req, res) {
     res.render('index.html', { pageCountMessage : null});
   } */
 
-    const collection = db.collection('inventory'); 
+    const collection = conn.collection('inventory'); 
     let test = collection.findOne({});
     res.send(test); 
   }
