@@ -66,7 +66,7 @@ var initDb = function(callback) {
     
 
     console.log('Connected to MongoDB at: %s', mongoURL);
-    console.log('heres what db looks like currently TEST TEST TEST',db)
+    console.log('heres what db looks like currently TEST TEST TEST 2',db)
   });
 };
 
@@ -91,7 +91,7 @@ app.get('/', function (req, res) {
   } */
     const collection = db.collection('inventory');
     //console.log("here is the result of running find on our inventory collection",collection.find( {} ));
-    let test = collection.find({});
+    let test = collection.find({item: "canvas"});
     res.send(test); 
   }
   else {
