@@ -97,7 +97,7 @@ app.get('/', function (req, res) {
     });
   }
   else {
-    res.send("shit aint working yo");
+    res.send("the service may be down try refreshing the page");
   }
 });
 
